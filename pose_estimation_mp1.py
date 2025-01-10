@@ -33,7 +33,7 @@ end_time = 285   # 종료 시간 (초)
 clip = video.subclipped(start_time, end_time)
 
 # 자른 영상 저장
-clip.write_videofile("squat_female_front.mp4", codec="libx264") #앞에서 찍은 화면
+clip.write_videofile("squat_female_front.mp4", codec="libx264") 
 
 # 자를 부분 설정 (초 단위) 
 start_time = 160 # 시작 시간 (초) 영상마다 원하는 부분을 바꿀것
@@ -78,8 +78,8 @@ def process_video(input_video_path):
             'Right Ankle x', 'Right Ankle y', 'Right Ankle z',
             'Left Heel x', 'Left Heel y', 'Left Heel z',
             'Right Heel x', 'Right Heel y', 'Right Heel z',
-            'Left Toe x', 'Left Toe y', 'Left Toe z',
-            'Right Toe x', 'Right Toe y', 'Right Toe z'
+            'Left Foot Index x', 'Left Foot Index y', 'Left Foot Index z',
+            'Right Foot Index x', 'Right Foot Index y', 'Right Foot Index z'
         ])
 
         # 비디오 파일 열기
@@ -101,7 +101,7 @@ def process_video(input_video_path):
 
             if results.pose_landmarks:
                 # 추적할 관절 목록
-                selected_landmarks = [11, 12, 17, 18, 19, 20, 21, 22, 25, 26, 27, 28]
+                selected_landmarks = [11, 12, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
                 landmarks = results.pose_landmarks.landmark
                 row = [frame_count]  # 첫 번째 열에 프레임 번호 추가
 
